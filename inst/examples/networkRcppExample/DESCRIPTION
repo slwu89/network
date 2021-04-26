@@ -1,0 +1,16 @@
+Package: networkRcppExample
+Type: Package
+Title: Presents a minimal example of linking to network's C API from Rcpp.
+Version: 1.0
+Date: 2021-04-26
+Author: Sean L. Wu
+Maintainer: Sean L. Wu <slwood89@gmail.com>
+Description: Presents a minimal example of linking to network's C API from Rcpp.
+License: GPL (>= 2)
+RoxygenNote: 7.1.1
+LinkingTo: 
+    network,
+    Rcpp
+Imports: 
+    network,
+    Rcpp
