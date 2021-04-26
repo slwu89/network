@@ -16,10 +16,13 @@ The method for calling the C routine from C++ is from
 [r-pkg-examples/rcpp-and-c](https://github.com/r-pkg-examples/rcpp-and-c).
 
 To implement this yourself, create a new package using Rcpp. Then, you
-must link to network by copying the code in `R/zzz.R`, and adding
-network to `LinkingTo` section of the DESCRIPTION. Then, use the
+must link to network by copying the code in `R/zzz.R` (be sure to change
+`#' @useDynLib networkRcppExample` to the name of your own package), and
+adding network to `LinkingTo` section of the DESCRIPTION. Then, use the
 preprocessor commands from `src/netRcpp.cpp` so that your C++ code can
-successfully call your C functions.
+successfully call your C functions. Remember to call
+`netRegisterFunctions()` at the top of your C routines so that the your
+code can find the network functions correctly.
 
 Functions from network’s C API can be found in
 [here](https://github.com/statnet/network/blob/master/inst/include/network.h),
